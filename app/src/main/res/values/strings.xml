@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ComposeAnimationShowcase</string>
+    <string name="page_title_bottom_sheet">BottomSheet</string>
+    <string name="page_title_parallax_column">ParallaxColumn</string>
+</resources>

@@ -1,4 +1,4 @@
-package io.moyuru.composeanimationshowcase.screen
+package io.moyuru.composeanimationshowcase.ui.screen
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.Image
@@ -35,9 +35,9 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.navigationBarsPadding
 import io.moyuru.composeanimationshowcase.R
-import io.moyuru.composeanimationshowcase.Space
 import io.moyuru.composeanimationshowcase.data.Song
 import io.moyuru.composeanimationshowcase.data.songs
+import io.moyuru.composeanimationshowcase.ui.composable.Space
 import io.moyuru.composeanimationshowcase.ui.theme.Colors
 import io.moyuru.composeanimationshowcase.ui.theme.TextStyles
 import kotlin.random.Random

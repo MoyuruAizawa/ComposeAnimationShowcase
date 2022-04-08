@@ -2,6 +2,7 @@ package io.moyuru.composeanimationshowcase
 
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.navigation.NavController
+import io.moyuru.composeanimationshowcase.data.Page
 
 val LocalNavigator = staticCompositionLocalOf<Navigator> {
   error("navigator not found")

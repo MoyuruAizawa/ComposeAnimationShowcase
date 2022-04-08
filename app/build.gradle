@@ -58,4 +58,5 @@ dependencies {
   implementation "com.google.accompanist:accompanist-systemuicontroller:$accompanist_version"
   implementation "com.google.accompanist:accompanist-insets:$accompanist_version"
   debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+  implementation "io.coil-kt:coil-compose:2.0.0-rc02"
 }

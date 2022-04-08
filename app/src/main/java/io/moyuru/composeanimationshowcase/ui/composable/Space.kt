@@ -1,4 +1,4 @@
-package io.moyuru.composeanimationshowcase
+package io.moyuru.composeanimationshowcase.ui.composable
 
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.RowScope

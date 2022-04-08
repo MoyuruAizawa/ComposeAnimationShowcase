@@ -1,4 +1,4 @@
-package io.moyuru.composeanimationshowcase
+package io.moyuru.composeanimationshowcase.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -30,8 +30,12 @@ import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import io.moyuru.composeanimationshowcase.screen.BottomSheetScreen
-import io.moyuru.composeanimationshowcase.screen.TopScreen
+import io.moyuru.composeanimationshowcase.AppNavigator
+import io.moyuru.composeanimationshowcase.LocalNavigator
+import io.moyuru.composeanimationshowcase.R
+import io.moyuru.composeanimationshowcase.data.Page
+import io.moyuru.composeanimationshowcase.ui.screen.BottomSheetScreen
+import io.moyuru.composeanimationshowcase.ui.screen.TopScreen
 import io.moyuru.composeanimationshowcase.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
@@ -89,7 +93,7 @@ class MainActivity : ComponentActivity() {
   ) {
     val inset = LocalWindowInsets.current
     val density = LocalDensity.current
-    TopAppBar(
+    io.moyuru.composeanimationshowcase.ui.composable.TopAppBar(
       navigationIcon = if (page != Page.TOP) {
         {
           IconButton(onClick = { navController.popBackStack() }) {

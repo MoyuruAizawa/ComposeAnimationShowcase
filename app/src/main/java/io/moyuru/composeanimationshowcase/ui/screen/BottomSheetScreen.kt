@@ -31,6 +31,7 @@ import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.navigationBarsPadding
@@ -42,6 +43,7 @@ import io.moyuru.composeanimationshowcase.ui.theme.Colors
 import io.moyuru.composeanimationshowcase.ui.theme.TextStyles
 import kotlin.random.Random
 
+@Preview
 @Composable
 fun BottomSheetScreen() {
   val density = LocalDensity.current

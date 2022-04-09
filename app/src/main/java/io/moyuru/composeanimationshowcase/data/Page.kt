@@ -6,5 +6,6 @@ import io.moyuru.composeanimationshowcase.R
 enum class Page(@StringRes val title: Int? = null, val hasAppBar: Boolean = true) {
   TOP(title = R.string.app_name, hasAppBar = true),
   BOTTOM_SHEET(title = R.string.page_title_bottom_sheet),
-  PARALLAX_SCROLL(title = R.string.page_title_parallax_scroll)
+  PARALLAX_SCROLL(title = R.string.page_title_parallax_scroll),
+  PAGER_SCROLL(title = R.string.page_title_pager_scroll)
 }

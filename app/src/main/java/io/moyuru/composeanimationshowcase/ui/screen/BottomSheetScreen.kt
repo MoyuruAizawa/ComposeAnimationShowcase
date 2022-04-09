@@ -27,6 +27,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.ScaleFactor
+import androidx.compose.ui.layout.lerp
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
@@ -100,10 +102,11 @@ private fun Content(
       .onGloballyPositioned { contentHeight = it.size.height }
       .graphicsLayer {
         val visibleContentMaxHeight = contentHeight - sheetPeekHeight
-        val coefficient = 1 - sheetOffset.value / visibleContentMaxHeight
-        val scale = (1 - coefficient * 0.05f)
-        scaleX = scale
-        scaleY = scale
+        val fraction = 1 - (sheetOffset.value / visibleContentMaxHeight).coerceIn(0f, 1f)
+        lerp(ScaleFactor(1f, 1f), ScaleFactor(0.95f, 0.95f), fraction).also {
+          scaleX = it.scaleX
+          scaleY = it.scaleY
+        }
       }
       .verticalScroll(rememberScrollState())
       .padding(vertical = 4.dp)

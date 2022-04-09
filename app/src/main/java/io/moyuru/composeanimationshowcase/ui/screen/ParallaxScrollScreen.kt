@@ -23,6 +23,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.lerp
 import io.moyuru.composeanimationshowcase.data.IMAGE_ASPECT_RATIO
 import io.moyuru.composeanimationshowcase.data.catImages
 import io.moyuru.composeanimationshowcase.ui.theme.Colors
@@ -39,7 +40,6 @@ fun ParallaxScrollScreen() {
       .fillMaxSize()
   ) {
     val borderWidth = 24.dp
-    val borderWidthPx = LocalDensity.current.run { borderWidth.toPx() }
     catImages.forEach {
       val painter = painterResource(id = it)
       var bottom by remember(key1 = painter) { mutableStateOf(0f) }
@@ -49,15 +49,14 @@ fun ParallaxScrollScreen() {
           .aspectRatio(IMAGE_ASPECT_RATIO)
           .fillMaxWidth()
       ) {
+        val density = LocalDensity.current
         Image(
           painter = painter,
           contentDescription = "CatImage",
           modifier = Modifier
             .graphicsLayer {
-              val factor = 1 - (bottom / columnHeight)
-                .coerceAtLeast(0f)
-                .coerceAtMost(1f)
-              translationY = borderWidthPx * 1.5f * factor
+              val fraction = 1 - (bottom / columnHeight).coerceIn(0f, 1f)
+              translationY = density.run { lerp(0.dp, borderWidth * 1.5f, fraction).toPx() }
             }
             .fillMaxSize()
         )

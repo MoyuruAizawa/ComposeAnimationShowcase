@@ -21,12 +21,13 @@ import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.layout.positionInParent
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import io.moyuru.composeanimationshowcase.data.IMAGE_ASPECT_RATIO
 import io.moyuru.composeanimationshowcase.data.catImages
 import io.moyuru.composeanimationshowcase.ui.theme.Colors
 
-private const val ASPECT_RATIO = 1.50658858f
-
+@Preview
 @Composable
 fun ParallaxScrollScreen() {
   val scrollState = rememberScrollState()
@@ -45,7 +46,7 @@ fun ParallaxScrollScreen() {
       Box(
         modifier = Modifier
           .onGloballyPositioned { bottom = it.positionInParent().y - scrollState.value + it.size.height }
-          .aspectRatio(ASPECT_RATIO)
+          .aspectRatio(IMAGE_ASPECT_RATIO)
           .fillMaxWidth()
       ) {
         Image(

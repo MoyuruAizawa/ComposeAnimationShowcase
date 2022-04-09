@@ -2,6 +2,8 @@ package io.moyuru.composeanimationshowcase.data
 
 import io.moyuru.composeanimationshowcase.R
 
+const val IMAGE_ASPECT_RATIO = 1.50658858f
+
 val catImages = listOf(
   R.drawable.img_cat_0,
   R.drawable.img_cat_1,

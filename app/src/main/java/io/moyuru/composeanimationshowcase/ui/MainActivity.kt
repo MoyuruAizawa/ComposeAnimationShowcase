@@ -35,6 +35,7 @@ import io.moyuru.composeanimationshowcase.LocalNavigator
 import io.moyuru.composeanimationshowcase.R
 import io.moyuru.composeanimationshowcase.data.Page
 import io.moyuru.composeanimationshowcase.ui.screen.BottomSheetScreen
+import io.moyuru.composeanimationshowcase.ui.screen.PagerScrollScreen
 import io.moyuru.composeanimationshowcase.ui.screen.ParallaxScrollScreen
 import io.moyuru.composeanimationshowcase.ui.screen.TopScreen
 import io.moyuru.composeanimationshowcase.ui.theme.AppTheme
@@ -82,6 +83,7 @@ class MainActivity : ComponentActivity() {
             composable(Page.TOP.name) { TopScreen() }
             composable(Page.BOTTOM_SHEET.name) { BottomSheetScreen() }
             composable(Page.PARALLAX_SCROLL.name) { ParallaxScrollScreen() }
+            composable(Page.PAGER_SCROLL.name) { PagerScrollScreen() }
           }
         }
       )

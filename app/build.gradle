@@ -31,7 +31,10 @@ android {
   }
   kotlinOptions {
     jvmTarget = '1.8'
-    freeCompilerArgs += "-opt-in=androidx.compose.material.ExperimentalMaterialApi"
+    freeCompilerArgs = [
+        "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
+        "-opt-in=com.google.accompanist.pager.ExperimentalPagerApi"
+    ]
   }
   buildFeatures {
     compose true
@@ -57,6 +60,7 @@ dependencies {
   def accompanist_version = "0.23.1"
   implementation "com.google.accompanist:accompanist-systemuicontroller:$accompanist_version"
   implementation "com.google.accompanist:accompanist-insets:$accompanist_version"
+  implementation "com.google.accompanist:accompanist-pager:$accompanist_version"
   debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
   implementation "io.coil-kt:coil-compose:2.0.0-rc02"
 }
